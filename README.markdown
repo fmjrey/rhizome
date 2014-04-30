@@ -57,6 +57,13 @@ nil
 
 ![](https://dl.dropboxusercontent.com/u/174179/rhizome/example_graph.png)
 
+By default the 'dot' layout command is used, unless a another one is specified via the :cmd key:
+```clj
+> (view-graph (keys g) g
+    :node->descriptor (fn [n] {:label n}) :cmd :circo)
+```
+Available layout commands are listed [here](http://www.graphviz.org/Documentation.php).
+
 Clusters are a way of grouping certain nodes together.  They can be any object you like, including values also used by a node.  Using `:cluster->parent`, they can be nested:
 
 ```clj
